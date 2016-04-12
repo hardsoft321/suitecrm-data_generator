@@ -444,7 +444,7 @@ class DataGenerator extends SugarBean
         $key = $data['join_key_lhs'];
         $fields[$key]['name'] = $key;
         $fields[$key]['table'] = $lhsTableName;
-        $fields[$key]['select_fields'] = $data['lhs_key'];
+        $fields[$key]['select_field'] = 'id'; //$data['lhs_key'];
         $fields[$key]['range_max_relate'] = $lhsModuleInfo['count_generated_not_deleted'];
         $fields[$key]['generated'] = true;
 
@@ -454,7 +454,7 @@ class DataGenerator extends SugarBean
         $key = $data['join_key_rhs'];
         $fields[$key]['name'] = $key;
         $fields[$key]['table'] = $rhsTableName;
-        $fields[$key]['select_fields'] = $data['rhs_key'];
+        $fields[$key]['select_field'] = 'id'; //$data['rhs_key'];
         $fields[$key]['range_max_relate'] = $rhsModuleInfo['count_generated_not_deleted'];
         $fields[$key]['generated'] = true;
 
