@@ -10,6 +10,7 @@ class DataGenerator extends SugarBean
     public $module_dir = 'DataGenerator';
     public static $ID_PREFIX = 'dgnrt'; //префикс не должен быть пустым или совпадать с /[A-Fa-f0-9\-]*/, так как по префиксу работает удаление
     public static $ALPHABET = '""\'\'-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ         ';
+    public static $INTERNAL_ENCODING = 'UTF-8';
 
     public function ACLAccess($view,$is_owner='not_set')
     {
@@ -360,7 +361,7 @@ class DataGenerator extends SugarBean
             $alphabetLength = mb_strlen($alphabet);
             $str = '';
             for ($i = 0; $i < $length; $i++) {
-                $str .= mb_substr($alphabet, rand(0, $alphabetLength - 1), 1);
+                $str .= mb_substr($alphabet, rand(0, $alphabetLength - 1), 1, self::$INTERNAL_ENCODING);
             }
             $bean->$fieldName = $str;
         }

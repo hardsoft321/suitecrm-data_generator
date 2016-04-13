@@ -8,7 +8,7 @@ $manifest = array(
     'is_uninstallable' => true,
     'published_date' => '2016-04-12',
     'type' => 'module',
-    'version' => '0.9.0',
+    'version' => '0.9.1',
 );
 $installdefs = array(
     'id' => 'data_generator',
